@@ -4,11 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "custom-green": "#73bf43",
+        "custom-green": "#56A700",
         "custom-blue": "#223169",
-        "custom-dark-blue":"#1a1f2b",
+        "custom-dark-blue":"#1D62B2",
         "blue-button": "#197BBD",
         "footer-primary": "#1A1F2B",
+        "custom-red": "#C61132",
       },
       spacing: {
         30: "7.5rem",
