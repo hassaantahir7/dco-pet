@@ -14,8 +14,10 @@ import { useSelector } from "react-redux";
 const navLinks = {
   home: { name: "HOME", link: "/" },
   products: { name: "PRODUCTS", link: "/products" },
-  profile: { name: "PROFILE", link: "/dashboard" },
-  orders: { name: "ORDERS", link: "/profile" },
+  shop: { name: "SHOP", link: "/products" },
+  pages: { name: "PAGES", link: "/" },
+  blogs: { name: "BLOG", link: "/" },
+  contact: { name: "CONTACT", link: "/" },
 };
 
 const Navbar = () => {
@@ -73,7 +75,7 @@ const Navbar = () => {
       {/* Mobile utility links */}
       <div className="p-4 border-b">
         <div className="flex items-center space-x-2 mb-3">
-          <BsTelephone className="text-red-500" />
+          <BsTelephone className="text-custom-red" />
           <span>(+800) 123 456 329</span>
         </div>
         <div className="links-nav-top">
@@ -146,15 +148,15 @@ const Navbar = () => {
     <Link to="/"> 
     <img src={logo} alt="DoctorPet Logo" className="h-8 md:h-10 drpet-logo" />
     </Link>
-    <div className="flex items-center bg-white border border-gray-300 rounded-md w-[70%] nav-input-container">
+    <div className="flex items-center bg-white rounded-md w-[70%] nav-input-container">
       <input
         type="text"
         placeholder="Search our store"
-        className="px-2 md:px-4 py-2 md:py-2 w-full outline-none rounded-md"
+        className="px-2 md:px-4 py-2 md:py-4 w-full border-t-2 border-l-2 border-b-2 border-gray-300 outline-none rounded-l-md"
         ref={searchRef}
       />
       <button 
-        className="bg-green-500 text-white px-2 md:px-4 py-2 md:py-2 rounded-r-md"
+        className="bg-custom-green text-white px-2 md:px-4 py-2 md:py-4 border border-custom-green rounded-r-md"
         onClick={() => navigate(`/products?categoryID=${1}&searchString=${searchRef.current.value}`)}
       >
         <AiOutlineSearch size={20} />
@@ -163,37 +165,38 @@ const Navbar = () => {
   </div>
 
         {/* Desktop Utility Links - Hidden on Mobile */}
-        <div className="hidden md:flex items-end w-[30%] justify-center space-x-6 ml-12  flex-col gap-6 nav-top-right">
-          <div className="flex items-center justify-center space-x-2 border-b-2 border-gray-200 w-[100%]">
-            <div className="nav-contact-row justify-center gap-2 flex w-[100%]">
-            <span>Call Us Now: </span>
-            <div className="bg-red-500 rounded-md p-1">
+        <div className="hidden md:flex items-end w-[30%] justify-center space-x-6 ml-12  flex-col gap-4">
+          <div className="flex items-center justify-center space-x-2 border-b-2 border-gray-200 w-[70%]">
+            <div className="nav-contact-row justify-center gap-2 pb-3 flex w-[100%]">
+            <span className="text-xs lg:text-sm">CALL US NOW: </span>
+            <div className="bg-custom-red rounded-md p-1">
               <BsTelephoneFill className="text-white" />
             </div>
-            <span>(+800) 123 456 329</span>
+            <span className="text-xs lg:text-sm font-semibold">(+800) 123 456 329</span>
           </div>
           </div>
           
-          <div className="nav-links-top flex items-start content-start w-[94%] justify-between">
+          <div className="nav-links-top flex items-start content-start w-[82%] justify-between">
           <div className="track-order flex gap-1">
           <FaTruck />
           <Link to="/profile">Track Your Order</Link>
           </div>
           <span> | </span>
           <div className="nav-auth flex gap-2">
+          <FaUser />
           {isLoggedIn ? (
             <button onClick={logout}>Logout</button>
           ) : (
             <Link to="/auth/signup"> Sign In or Register</Link>
           )}
           </div>
-          <span> | </span>
+          {/* <span> | </span>
           <div className="nav-account flex gap-2">
           <Link to="/dashboard" className="flex items-center space-x-1">
             <FaUser />
             <span> Account</span>
           </Link>
-          </div>
+          </div> */}
           </div>
          
         </div>
@@ -206,7 +209,7 @@ const Navbar = () => {
       <div className="hidden md:flex w-[70%] text-gray-600 border border-gray-100 items-center justify-start mt-5 nav-bottom">
         {/* All Categories Button */}
         <div className="dropdown">
-          <div className="flex items-center space-x-2 cursor-pointer text-white bg-blue-600 py-5 pl-5 w-[220px]">
+          <div className="flex items-center space-x-2 cursor-pointer text-white bg-custom-dark-blue py-5 pl-5 w-[220px]">
             <GiHamburgerMenu size={24} />
             <span>All Categories</span>
           </div>
@@ -231,7 +234,7 @@ const Navbar = () => {
             <Link
               key={index}
               to={link.link}
-              className="text-gray-700 hover:text-blue-500"
+              className="text-footer-primary font-semibold"
             >
               {link.name}
             </Link>
@@ -245,7 +248,7 @@ const Navbar = () => {
           >
             <div className="flex items-center space-x-2">
               <AiOutlineShoppingCart size={24} />
-              <div className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+              <div className="bg-custom-green text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                 {cart?.length || 0}
               </div>
             </div>
