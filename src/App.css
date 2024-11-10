@@ -445,7 +445,7 @@ input[type="range"] {
     .main-nav{
         gap: 2rem;
     }
-    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories{
+    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories, .banner-text-content{
         width: 82%;
     }
     .new-arrivals-container, .banners-bottom img{
@@ -459,7 +459,7 @@ input[type="range"] {
     .footer-main{
         width: 80%;
     }
-    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories{
+    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories, .banner-text-content{
         width: 92%;
     }
     .new-arrivals-container, .banners-bottom img{
@@ -475,8 +475,11 @@ input[type="range"] {
         width: 96%;
     }
     .product-card {
-        width: 47% !important;
+        width: 45% !important;
         margin: 0;
+    }
+    .product-shop-products{
+        padding: 0;
     }
     .drpet-logo
     {
@@ -523,7 +526,7 @@ input[type="range"] {
     }
     .top-categories {
         width: 100%;
-        padding: 1rem 0.6rem;
+        padding: 1rem 0;
     }
 
     .new-arrivals {
@@ -606,14 +609,9 @@ input[type="range"] {
     .home-hero{
         padding: 0 0 1rem 0;
     }
-    .banner-text
-    {
-        padding-left: 0.5rem;
-    }
     .banner-text-content
     {
         padding-top: 2rem;
-        padding-left: 0.2rem;
     }
     .banners-main .banners-row {
         flex-direction: column;
