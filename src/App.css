@@ -1,0 +1,650 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+* {
+    --sliderColor: #2B396B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.bg-green {
+    background-color: #73bf43;
+}
+
+.bg-light-green {
+    background-color: #9dd27b;
+}
+
+.bg-lighter-green {
+    background-color: #d5ebc6;
+}
+
+.text-green {
+    color: #73bf43;
+}
+
+.text-blue {
+    color: #223169;
+}
+
+.text-light-green {
+    color: #E5F5F4;
+}
+
+.green-border {
+    border-color: #73bf43;
+}
+
+.blue-border {
+    border-color: #223169;
+}
+
+.blue-bg {
+    background-color: #223169;
+}
+
+.bg-light-yellow {
+    background-color: #fcf3cf;
+}
+
+.checkbox-container {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+.checkbox {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    position: absolute;
+    top: -0.85rem;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #ccc;
+    z-index: 0;
+}
+
+.checkbox:checked~.checkbox-custom::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.max-w-20 {
+    max-width: 15rem;
+}
+
+.max-w-30 {
+    max-width: 20rem;
+}
+
+.sidebar {
+    box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+    width: 18rem;
+}
+
+.sidebar .logo {
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+
+.sidebar-item svg {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar-item:hover {
+    background-color: #054629;
+}
+
+.nav-item,
+.navbar {
+    z-index: 10000;
+}
+
+.sidebar .sidebar-item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/*-- calendar --*/
+.e-calendar .e-content td.e-today span.e-day,
+.e-calendar .e-content td.e-focused-date.e-today span.e-day,
+.e-calendar .e-content td.e-today:hover span.e-day,
+.e-calendar .e-content td.e-focused-date.e-today:hover span.e-day {
+    border: 1px solid #054629;
+    color: #054629;
+}
+
+.e-calendar .e-content td.e-selected.e-focused-date span.e-day,
+.e-calendar .e-content td.e-today.e-selected span.e-day,
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day,
+.e-calendar .e-content td.e-selected:hover span.e-day,
+.e-calendar .e-content td.e-selected.e-focused-date span.e-day {
+    color: white;
+    background-color: #054629;
+    border: 1px solid #054629;
+}
+
+.e-btn.e-flat.e-primary,
+.e-css.e-btn.e-flat.e-primary,
+.e-btn.e-flat.e-primary:hover,
+.e-css.e-btn.e-flat.e-primary:hover {
+    color: #01563F;
+}
+
+.e-dlg-center-center,
+.e-quick-popup-wrapper.e-device {
+    z-index: 1000000 !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(216, 216, 216);
+    border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* color-picker style  */
+
+#preview {
+    background: transparent url('https://ej2.syncfusion.com/react/demos/src/color-picker/images/pen.png') no-repeat;
+    display: inline-block;
+    height: 80px;
+    margin: 10px 0;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: #01563F;
+}
+
+.e-input-group:not(.e-float-icon-left),
+.e-input-group.e-success:not(.e-float-icon-left),
+.e-input-group.e-warning:not(.e-float-icon-left),
+.e-input-group.e-error:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left),
+.e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left) {
+    border: none;
+}
+
+.dot-green {
+    background: #32CD32;
+}
+
+.dot-red {
+    background: #FF4500;
+}
+
+.dot-blue {
+    background: #1E90FF;
+}
+
+.dot-purple {
+    background: #9370DB;
+}
+
+.dot-gray {
+    background: #808080;
+}
+
+.dot-orange {
+    background: #FFA500;
+}
+
+.canvas {
+    position: relative;
+}
+
+.eraser-icon {
+    position: absolute;
+}
+
+/* Range Slider */
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    /* margin: 35% auto; */
+}
+
+.sliders_control {
+    position: relative;
+    height: 30px;
+}
+
+#fromSlider {
+    height: 0;
+    z-index: 1;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 5px;
+    height: 20px;
+    background-color: var(--sliderColor);
+    /* border-radius: 50%; */
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 5px;
+    height: 20px;
+    background-color: #fff;
+    /* border-radius: 50%; */
+    box-shadow: 0 0 0 1px #C6C6C6;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    background: var(--sliderColor);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+    box-shadow: inset 0 0 3px var(--sliderColor), 0 0 9px var(--sliderColor);
+    -webkit-box-shadow: inset 0 0 3px var(--sliderColor), 0 0 9px var(--sliderColor);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: #C6C6C6;
+    pointer-events: none;
+}
+
+/* End range slider */
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.new-arrival-products .product-card{
+    width: 32.2%;
+    margin: 1rem 0;
+    border-right: 1px solid #ececec;
+}
+.foods-categories .product-card{
+    width: 24.2%;
+    margin: 1rem 0;
+    border-right: 1px solid #ececec;
+}
+@media (max-width:1350px)
+{
+.dropdown{
+    width: 230px;
+}
+.dropdown-content{
+    width: 168px;
+}
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.banners-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banners-main .banners-row{
+    display: flex;
+    gap: 1rem;
+    width: 70%;
+}
+.banner-middle
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+.banners-row img, .banners-row .banner-middle 
+{
+    width: 33%;
+}
+.banner-middle img
+{
+    height: 47%;
+    width: 100%;
+}
+.product-card {
+    flex-direction: column;
+    width: 24%;
+}
+.nav-links-top
+{
+    margin-left: 0 !important;
+}
+.top-banner img{
+    width: 70%;
+}
+.banners-bottom
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.banners-bottom img
+{
+    width: 34.5%;
+}
+.qualities {
+    width: 70%;
+}
+.qualities .qualities-card{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-top{
+    width: 70%;
+}
+.main-nav{
+    gap: 3rem;
+}
+
+/*----------- Media Queries------------ */
+@media screen and (max-width:1300px) {
+    .nav-input-container{
+        width: 50%;
+    }
+    .nav-top, .nav-bottom{
+        width: 80%;
+    }
+    .nav-top-main{
+        width: 80%;
+        justify-content: flex-start;
+    }
+    .nav-top-right{
+        width: 40%;
+    }
+}
+@media screen and (max-width:1100px) {
+    .main-nav{
+        gap: 2rem;
+    }
+    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories{
+        width: 82%;
+    }
+    .new-arrivals-container, .banners-bottom img{
+        width: 40%;
+    }
+}
+@media screen and (max-width:900px) {
+    .sidebar {
+        z-index: 10000000;
+    }
+    .footer-main{
+        width: 80%;
+    }
+    .nav-top, .nav-bottom, .footer-main, .qualities, .top-banner img, .banners-main .banners-row, .top-categories-container, .foods-categories{
+        width: 92%;
+    }
+    .new-arrivals-container, .banners-bottom img{
+        width: 46%;
+    }
+    .shop-products-main{
+        padding: 1rem !important;;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-top{
+        width: 96%;
+    }
+    .product-card {
+        width: 47% !important;
+        margin: 0;
+    }
+    .drpet-logo
+    {
+        width: 170px;
+        margin-right: 0.8rem;
+    }
+    .footer
+    {
+        padding: 2rem 0 0;
+    }
+    .footer-main{
+        width: 90%;
+        flex-direction: column;
+    }
+    .footer-links-main{
+        padding-top: 1rem;
+    }
+    .contact-section{
+        width: 90%;
+    }
+    .info-section{
+        width: 50%;
+    }
+    .news-letter{
+        width: 100%;
+    }
+    .product-card:nth-child(2n) {
+        padding-right: 0;
+    }
+
+    .qualities {
+        width: 94%;
+        padding-top: 0;
+        flex-wrap: wrap;
+    }
+    .qualities .qualities-card{
+        width: 50%;
+    }
+    .top-banner img {
+        width: 94%;
+    }
+    .top-banner-inner-pages{
+        margin-top: 0!important;
+    }
+    .top-categories {
+        width: 100%;
+        padding: 1rem 0.6rem;
+    }
+
+    .new-arrivals {
+        flex-wrap: wrap;
+    }
+    .new-arrivals-container{
+        width: 100%;
+        padding-bottom: 1rem;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+    }
+
+    .new-arrivals-row {
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    .footer-links
+    {
+        display: none;
+    }
+    .footer-links-main{
+        margin-top: 1rem;
+    }
+    .links-footer{
+        margin-left: 0;
+    }
+    .dropdown{
+        width: 172px;
+    }
+    .nav-search-container
+    {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .search-container{
+        width: 64%;
+    }
+    .search-field{
+        width: 100%;
+    }
+    .nav-links{
+        gap: 0.4rem;
+    }
+    .nav-top-main{
+        flex-direction: column;
+    }
+    .nav-input-container{
+        width: 90%;
+    }
+    .product-detail-img
+    {
+        padding: 1rem 0.2rem;
+    }
+    .product-description-container{
+        padding: 1rem;
+    }
+    .product-tabs{
+        padding: 0;
+    }
+    .product-img
+    {
+        width: 96%;
+    }
+    .checkout-main{
+        flex-direction: column;
+    }
+    .checkout-row{
+        padding: 1rem;
+        width: 100%;
+        margin-left: 0;
+    }
+    .banners-bottom
+    {
+        flex-direction: column;
+    }
+    .banners-bottom img
+    {
+        width: 94%;
+    }
+    .home-hero{
+        padding: 0 0 1rem 0;
+    }
+    .banner-text
+    {
+        padding-left: 0.5rem;
+    }
+    .banner-text-content
+    {
+        padding-top: 2rem;
+        padding-left: 0.2rem;
+    }
+    .banners-main .banners-row {
+        flex-direction: column;
+        width: 94%;
+    }
+    .banners-row img, .banners-row .banner-middle {
+        width: 100%;
+    }
+    .foods-categories
+    {
+        width: 94%;
+    }
+    .interested-category
+    {
+        padding-top: 0;
+    }
+
+    .dashboard-main, .account-orders {
+        margin-top: 5rem;
+        padding: 1rem;
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+    }
+    .dashboard-form, .dashboard-account
+    {
+        width: 100%;
+    }
+   .orders-table{
+    padding: 0;
+    margin: 0;
+   }
+
+}
